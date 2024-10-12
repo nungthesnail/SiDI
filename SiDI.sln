@@ -5,6 +5,13 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiDI", "SiDI\SiDI.csproj", "{7A81E2BB-974B-4F12-AB32-2D72E9036BF4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{BC6A5A75-B110-4342-BCC1-7219EBC2DF88}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiDI.Tests", "SiDI.Tests\SiDI.Tests.csproj", "{A505FB54-37FF-40C7-998C-37F562600A04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{7A81E2BB-974B-4F12-AB32-2D72E9036BF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A81E2BB-974B-4F12-AB32-2D72E9036BF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A81E2BB-974B-4F12-AB32-2D72E9036BF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A505FB54-37FF-40C7-998C-37F562600A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A505FB54-37FF-40C7-998C-37F562600A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A505FB54-37FF-40C7-998C-37F562600A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A505FB54-37FF-40C7-998C-37F562600A04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
