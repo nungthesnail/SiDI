@@ -11,6 +11,10 @@
 			_builder = settings.DependencyBuilder;
 			_collection = settings.DependencyCollection;
 			_solver = settings.DependencySolver;
+
+			_builder.SetServicesMediator(this);
+			_collection.SetServicesMediator(this);
+			_solver.SetServicesMediator(this);
 		}
 
 		public IDependencyBuilder GetDependencyBuilder() => _builder;

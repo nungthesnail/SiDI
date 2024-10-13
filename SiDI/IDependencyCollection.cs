@@ -1,7 +1,7 @@
 ﻿
 namespace SiDI
 {
-	internal interface IDependencyCollection
+	internal interface IDependencyCollection : IInternalService
 	{
 		IDependencyDescriptor Get(Type interfaceType);
 		bool IsRegistered(Type interfaceType);

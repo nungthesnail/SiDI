@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace SiDI
+﻿namespace SiDI
 {
 	public class DependencyInjectorBuilder : IDependencyInjectorBuilder
 	{

@@ -2,7 +2,7 @@
 
 namespace SiDI
 {
-	internal class DependencyCollection : IDependencyCollection
+	internal class DependencyCollection : IDependencyCollection, IInternalService
 	{
 		private readonly Dictionary<Type, IDependencyDescriptor> _descriptors = new();
 
@@ -13,6 +13,9 @@ namespace SiDI
 		{
 			_descriptors = descriptors;
 		}
+
+		public void SetServicesMediator(IServicesMediator mediator)
+		{ }
 
 		public void Register(IDependencyDescriptor descriptor)
 		{
