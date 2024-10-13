@@ -1,28 +1,9 @@
 ﻿namespace SiDI
 {
-	public class DependencyBuilder : IDependencyBuilder
+	internal class DependencyBuilder : IDependencyBuilder
 	{
-		public IDependencyBuilder RegisterTransient<TInterface, TImplementation>()
-			where TInterface : class
-			where TImplementation : TInterface
-		{
-			throw new NotImplementedException();
-		}
-
-		public IDependencyBuilder RegisterSingleton<TInterface, TImplementation>()
-			where TInterface : class
-			where TImplementation : TInterface
-		{
-			throw new NotImplementedException();
-		}
-
-		public IDependencyBuilder RegisterSingletonWithImplementation<TInterface>(TInterface implementation)
-			where TInterface : class
-		{
-			throw new NotImplementedException();
-		}
-
-		public IDependencyProvider Build()
+		public T Build<T>(DependencyBuildingInfo? buildingInfo = null)
+			where T : class?
 		{
 			throw new NotImplementedException();
 		}

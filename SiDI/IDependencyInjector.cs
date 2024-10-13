@@ -1,6 +1,6 @@
 ﻿namespace SiDI
 {
-	public interface IDependencyProvider
+	public interface IDependencyInjector
 	{
 		T Request<T>() where T : class;
 	}

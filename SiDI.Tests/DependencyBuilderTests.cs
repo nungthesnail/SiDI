@@ -12,10 +12,10 @@ namespace SiDI.Tests
 		public void TestBuild_InputIsEmpty_ResultIsNotNull()
 		{
 			// Arrange
-			IDependencyBuilder dependencyBuilder = new DependencyBuilder();
+			IDependencyInjectorBuilder dependencyBuilder = new DependencyInjectorBuilder();
 
 			// Act
-			IDependencyProvider dependencyProvider = dependencyBuilder.Build();
+			IDependencyInjector dependencyProvider = dependencyBuilder.Build();
 
 			// Assert
 			Assert.NotNull(dependencyProvider);
@@ -25,11 +25,11 @@ namespace SiDI.Tests
 		public void TestRegisterTransient_InputIsIMockInterfaceAndMockImplementation_ResultIsNotNull()
 		{
 			// Arrange
-			IDependencyBuilder dependencyBuilder = new DependencyBuilder();
+			IDependencyInjectorBuilder dependencyBuilder = new DependencyInjectorBuilder();
 			dependencyBuilder.RegisterTransient<IMockInterface, MockImplementation>();
 
 			// Act
-			IDependencyProvider dependencyProvider = dependencyBuilder.Build();
+			IDependencyInjector dependencyProvider = dependencyBuilder.Build();
 
 			// Assert
 			Assert.NotNull(dependencyProvider.Request<IMockInterface>());
@@ -39,11 +39,11 @@ namespace SiDI.Tests
 		public void TestRegisterSingleton_InputIsIMockInterfaceAndMockImplementation_ResultIsNotNull()
 		{
 			// Arrange
-			IDependencyBuilder dependencyBuilder = new DependencyBuilder();
+			IDependencyInjectorBuilder dependencyBuilder = new DependencyInjectorBuilder();
 			dependencyBuilder.RegisterSingleton<IMockInterface, MockImplementation>();
 
 			// Act
-			IDependencyProvider dependencyProvider = dependencyBuilder.Build();
+			IDependencyInjector dependencyProvider = dependencyBuilder.Build();
 
 			// Assert
 			Assert.NotNull(dependencyProvider.Request<IMockInterface>());
@@ -53,11 +53,11 @@ namespace SiDI.Tests
 		public void TestRegisterSingleton_InputIsIMockInterfaceAndMockImplementation_ResultsAreEqual()
 		{
 			// Arrange
-			IDependencyBuilder dependencyBuilder = new DependencyBuilder();
+			IDependencyInjectorBuilder dependencyBuilder = new DependencyInjectorBuilder();
 			dependencyBuilder.RegisterSingleton<IMockInterface, MockImplementation>();
 
 			// Act
-			IDependencyProvider dependencyProvider = dependencyBuilder.Build();
+			IDependencyInjector dependencyProvider = dependencyBuilder.Build();
 			var requested1 = dependencyProvider.Request<IMockInterface>();
 			var requested2 = dependencyProvider.Request<IMockInterface>();
 
@@ -69,12 +69,12 @@ namespace SiDI.Tests
 		public void TestRegisterSingletonWithImplementation_InputIsIMockInterfaceAndImplementation_ResultIsNotNull()
 		{
 			// Arrange
-			IDependencyBuilder dependencyBuilder = new DependencyBuilder();
+			IDependencyInjectorBuilder dependencyBuilder = new DependencyInjectorBuilder();
 			IMockInterface mockImplementation = new MockImplementation();
 			dependencyBuilder.RegisterSingletonWithImplementation(mockImplementation);
 
 			// Act
-			IDependencyProvider dependencyProvider = dependencyBuilder.Build();
+			IDependencyInjector dependencyProvider = dependencyBuilder.Build();
 
 			// Assert
 			Assert.NotNull(dependencyProvider.Request<IMockInterface>());
@@ -84,12 +84,12 @@ namespace SiDI.Tests
 		public void TestRegisterSingletonWithImplementation_InputIsIMockInterfaceAndImplementation_ResultAreEqual()
 		{
 			// Arrange
-			IDependencyBuilder dependencyBuilder = new DependencyBuilder();
+			IDependencyInjectorBuilder dependencyBuilder = new DependencyInjectorBuilder();
 			IMockInterface mockImplementation = new MockImplementation();
 			dependencyBuilder.RegisterSingletonWithImplementation(mockImplementation);
 
 			// Act
-			IDependencyProvider dependencyProvider = dependencyBuilder.Build();
+			IDependencyInjector dependencyProvider = dependencyBuilder.Build();
 			var requested1 = dependencyProvider.Request<IMockInterface>();
 			var requested2 = dependencyProvider.Request<IMockInterface>();
 
